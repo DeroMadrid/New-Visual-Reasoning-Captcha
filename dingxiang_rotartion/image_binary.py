@@ -10,7 +10,7 @@ images_path = os.listdir(r"C:/Users/Dero/Desktop/dx")
 for filelist in images_path:
     openpath = "C:/Users/Dero/Desktop/dx/" + filelist
     image1 = cv2.imread(openpath)
-    savepath = "C:/Users/Dero/Desktop/dxxxx/" + filelist[:-4] + "220.png"
+    savepath = "C:/Users/Dero/Desktop/dxx/" + filelist[:-4] + "220.png"
     preprocessing.binary(openpath, savepath, "fixed_threshold", 220)
     image1 = Image.open(savepath)
     img_array1 = np.asarray(image1)

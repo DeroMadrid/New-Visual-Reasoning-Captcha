@@ -103,7 +103,7 @@ while True:
             anger = 360 - xx
 
     print(anger)
-    length = anger / 360 * 300
+    length = anger / 360 * 240
     print(length)
 
     time.sleep(1)

@@ -18,23 +18,26 @@ chrome_driver = r"C:/Users/Dero/anaconda3/envs/zy/Lib/site-packages/selenium/web
 browser = webdriver.Chrome(executable_path=chrome_driver)  # 声明一个浏览器对象
 
 browser.get("https://www.dingxiang-inc.com/business/captcha")
+time.sleep(3)
 while True:
-    time.sleep(1)
+
+    time.sleep(0.2)
+    pyautogui.moveTo(1112, 699)
     butt = browser.find_element_by_xpath("//li[contains(@class, 'item-9')]")
     action = ActionChains(browser)
     action.move_to_element(butt).perform()
     action.click(butt).perform()
-    time.sleep(1)
+    time.sleep(0.2)
     pyautogui.scroll(-500)
     pyautogui.click()
-    time.sleep(1)
+    time.sleep(0.2)
     butt1 = browser.find_element_by_xpath("//div[contains(@class, 'dx_captcha_rotate_sub-slider')]/img")
-    time.sleep(1)
+    time.sleep(0.2)
     image0 = butt1.get_attribute('src')
     # action.move_to_element(butt1).perform()
     # action.click(butt1).perform()dx_captcha_rotate_bg
     butt2 = browser.find_element_by_xpath("//div[contains(@class, 'dx_captcha_rotate_bg')]/img")
-    time.sleep(1)
+    time.sleep(0.2)
     image1 = butt2.get_attribute('src')
     # image_list = [image0, image1]
     # i = 0
@@ -103,12 +106,12 @@ while True:
             anger = 360 - xx
 
     print(anger)
-    length = anger / 360 * 300
+    length = anger / 360 * 240
     print(length)
 
-    time.sleep(1)
+    time.sleep(0.2)
     pyautogui.mouseDown()
     pyautogui.dragRel(length, 0, 2)
-    time.sleep(1)
+    time.sleep(0.2)
     pyautogui.mouseUp()
     browser.refresh()

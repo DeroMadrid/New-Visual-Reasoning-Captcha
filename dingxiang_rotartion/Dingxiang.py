@@ -21,23 +21,24 @@ browser.get("https://www.dingxiang-inc.com/business/captcha")
 time.sleep(3)
 while True:
 
-    time.sleep(0.2)
-    pyautogui.moveTo(1112, 699)
+    time.sleep(0.5)
+    # (1163, 887) on the Desktop, and (1112, 699) on the cyl PC
+    pyautogui.moveTo(1163, 887)
     butt = browser.find_element_by_xpath("//li[contains(@class, 'item-9')]")
     action = ActionChains(browser)
     action.move_to_element(butt).perform()
     action.click(butt).perform()
-    time.sleep(0.2)
+    time.sleep(0.5)
     pyautogui.scroll(-500)
     pyautogui.click()
-    time.sleep(0.2)
+    time.sleep(0.5)
     butt1 = browser.find_element_by_xpath("//div[contains(@class, 'dx_captcha_rotate_sub-slider')]/img")
-    time.sleep(0.2)
+    time.sleep(0.5)
     image0 = butt1.get_attribute('src')
     # action.move_to_element(butt1).perform()
     # action.click(butt1).perform()dx_captcha_rotate_bg
     butt2 = browser.find_element_by_xpath("//div[contains(@class, 'dx_captcha_rotate_bg')]/img")
-    time.sleep(0.2)
+    time.sleep(0.5)
     image1 = butt2.get_attribute('src')
     # image_list = [image0, image1]
     # i = 0
@@ -106,7 +107,7 @@ while True:
             anger = 360 - xx
 
     print(anger)
-    length = anger / 360 * 240
+    length = anger / 360 * 300
     print(length)
 
     time.sleep(0.2)

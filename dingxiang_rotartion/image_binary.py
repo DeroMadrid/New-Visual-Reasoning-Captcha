@@ -94,6 +94,12 @@ for filelist in images_path:
         else:
             anger = 360 - xx
 
+    # 增加判断中心点和均值点是否在同一侧的代码；保证图片旋转之后图片为正
+    num_a = (80-avg_x)*cen_x + (80-avg_y)*cen_y + 80*(avg_x+avg_y-160)
+    num_b = (80 - avg_x) * avg_x + (80 - avg_y) * avg_y + 80 * (avg_x + avg_y - 160)
+    if num_b * num_a < 0:
+        anger = anger + 180
+
     print(anger)
     # anger是图像需要顺时针旋转的角度
     length = anger / 340 * 260

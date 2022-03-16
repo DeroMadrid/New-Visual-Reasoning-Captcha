@@ -23,7 +23,7 @@ while True:
 
     time.sleep(0.5)
     # (1163, 887) on the Desktop, and (1112, 699) on the cyl PC
-    pyautogui.moveTo(1163, 887)
+    pyautogui.moveTo(1112, 699)
     butt = browser.find_element_by_xpath("//li[contains(@class, 'item-9')]")
     action = ActionChains(browser)
     action.move_to_element(butt).perform()
@@ -59,7 +59,7 @@ while True:
 
     openpath = "C:/Users/Dero/Desktop/dx/111.png"
     savapath = "C:/Users/Dero/Desktop/dx/" + str(222) + ".png"
-    preprocessing.binary(openpath, savapath, "fixed_threshold", 220)
+    preprocessing.binary(openpath, savapath, "fixed_threshold", 230)
 
     openpath = "C:/Users/Dero/Desktop/dx/222.png"
     # image1 = cv2.imread(openpath)
@@ -79,6 +79,7 @@ while True:
                     img_array1[i][j] = 0
     # print((num_x, num_y, count))
     if count == 0:
+        browser.refresh()
         continue
     avg_x = int(num_x / count)
     avg_y = int(num_y / count)
@@ -153,7 +154,8 @@ while True:
     if num_b * num_a < 0:
         anger = (anger + 180) % 360
     print(anger)
-    length = anger / 360 * 300
+    # length is 300 on the Desktop, and 240 on the cyl
+    length = anger / 360 * 240
     print(length)
 
     time.sleep(0.2)

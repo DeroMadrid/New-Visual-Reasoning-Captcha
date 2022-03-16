@@ -18,7 +18,7 @@ browser = webdriver.Chrome(executable_path=chrome_driver)  # 声明一个浏览�
 
 browser.get("https://www.dingxiang-inc.com/business/captcha")
 
-for count in range(148, 170):
+for count in range(175, 190):
     time.sleep(1)
     butt = browser.find_element_by_xpath("//li[contains(@class, 'item-9')]")
     action = ActionChains(browser)

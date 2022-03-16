@@ -10,7 +10,8 @@ for filelist in images_path:
     openpath = "C:/Users/Dero/Desktop/dx/" + filelist
     image1 = cv2.imread(openpath)
     savepath = "C:/Users/Dero/Desktop/dxx/" + filelist[:-4] + "220.png"
-    preprocessing.binary(openpath, savepath, "fixed_threshold", 220)
+    savepath1 = "C:/Users/Dero/Desktop/dxxx/" + filelist[:-4] + "220.png"
+    preprocessing.binary(openpath, savepath, "fixed_threshold", 240)
     image1 = Image.open(savepath)
     img_array1 = np.asarray(image1)
     count = 0
@@ -102,12 +103,10 @@ for filelist in images_path:
 
     print(anger)
     # anger是图像需要顺时针旋转的角度
-    length = anger / 340 * 260
-    print(length)
     Image.fromarray(np.uint8(img_array1))
     img_save = cv2.cvtColor(np.asarray(img_array1), cv2.COLOR_RGB2BGR)
     # savepath11 = "C:/Users/Dero/Desktop/dx_adjust/" + filelist[:-4] + "220.png"
-    cv2.imwrite(savepath, img_save)
+    cv2.imwrite(savepath1, img_save)
     path = openpath
     img = Image.open(path)
     # 修改角度

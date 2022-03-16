@@ -23,7 +23,7 @@ while True:
 
     time.sleep(0.5)
     # (1163, 887) on the Desktop, and (1112, 699) on the cyl PC
-    pyautogui.moveTo(1163, 887)
+    pyautogui.moveTo(1112, 699)
     butt = browser.find_element_by_xpath("//li[contains(@class, 'item-9')]")
     action = ActionChains(browser)
     action.move_to_element(butt).perform()
@@ -107,7 +107,8 @@ while True:
             anger = 360 - xx
 
     print(anger)
-    length = anger / 360 * 300
+    # length is 300 on the Desktop, and 240 on the cyl
+    length = anger / 360 * 240
     print(length)
 
     time.sleep(0.2)

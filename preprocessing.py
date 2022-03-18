@@ -90,9 +90,16 @@ def dilation(open_path, save_path):
     image = cv.imdecode(np.fromfile(open_path, dtype=np.uint8), 0)  # 用于处理中文路径的图片
     kernel = np.ones((2, 2), np.uint8)
     dilation = cv.dilate(image, kernel)
-    dilation = cv.dilate(dilation, kernel)
-    dilation = cv.dilate(dilation, kernel)
-    dilation = cv.dilate(dilation, kernel)
+    dilation = cv.erode(dilation, kernel)
+
+    # dilation = cv.dilate(dilation, kernel)
+    # dilation = cv.dilate(dilation, kernel)
+    # dilation = cv.dilate(dilation, kernel)
+    # dilation = cv.dilate(dilation, kernel)
+    # dilation = cv.dilate(dilation, kernel)
+    # dilation = cv.dilate(dilation, kernel)
+    # dilation = cv.dilate(dilation, kernel)
+    # dilation = cv.dilate(dilation, kernel)
     cv.imwrite(save_path, dilation)
     # cv.imencode('.png', dilation)[1].tofile(save_path)  # 保存带中文的路径
 

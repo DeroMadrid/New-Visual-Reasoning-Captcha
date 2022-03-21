@@ -9,9 +9,11 @@ import numpy as np
 from PIL import Image
 # storing the size of the screen
 size = pyautogui.size()
+
 print(size)
 print(size.width)
-
+time.sleep(5)
+print(pyautogui.position())
 from selenium.common import exceptions as EX
 chrome_driver = r"C:/Users/Dero/anaconda3/envs/zy/Lib/site-packages/selenium/webdriver/chrome/chromedriver.exe"
 browser = webdriver.Chrome(executable_path=chrome_driver)  # 声明一个浏览器对象

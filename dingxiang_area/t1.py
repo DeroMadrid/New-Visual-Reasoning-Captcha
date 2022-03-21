@@ -18,7 +18,7 @@ from PIL import Image
 #
 # data = microstructure(l=128) * 1  # 生成测试图片
 
-openpath = "C:/Users/Dero/Desktop/dingxiang_area/dilation/10.png"
+openpath = "C:/Users/Dero/Desktop/dingxiang_area/dilation/2_full.png"
 image1 = Image.open(openpath)
 img_array1 = np.asarray(image1)
 labels = measure.label(img_array1, connectivity=2)  #
@@ -31,10 +31,12 @@ for prop in properties:
     if prop.area > num:
         max_one = prop.label
         num = prop.area
+        point = prop.centroid
 
 valid_label.add(max_one)
 current_bw = np.in1d(labels, list(valid_label)).reshape(labels.shape)
-
+print(point)
+print(point[0], point[1])
 # dst = color.label2rgb(current_bw)  # 根据不同的标记显示不同的颜色
 print('regions number:', current_bw.max() + 1)  # 显示连通区域块数(从0开始标记)
 

@@ -3,9 +3,9 @@ from PIL import Image
 import cv2
 import math
 
-openpath = "C:/Users/Dero/Desktop/dingxiang_area/dilation/1.png"
+openpath = "C:/Users/Dero/Desktop/dingxiang_area/dilation/2.png"
 # image1 = cv2.imread(openpath)
-savapath = "C:/Users/Dero/Desktop/dingxiang_area/dilation/1_full.png"
+savapath = "C:/Users/Dero/Desktop/dingxiang_area/dilation/2_full.png"
 image1 = Image.open(openpath)
 img_array1 = np.asarray(image1)
 image2 = Image.open(savapath)
@@ -29,7 +29,8 @@ for i in range(0, 150):
             img_array2[i][j] = 0
         else:
             img_array2[i][j] = 255
-Image.fromarray(np.uint8(img_array2))
-img_save = cv2.cvtColor(np.asarray(img_array2), cv2.COLOR_RGB2BGR)
-
-cv2.imwrite(savapath, img_save)
+i11 = Image.fromarray(np.uint8(img_array2))
+# img_save = cv2.cvtColor(np.asarray(img_array2), cv2.COLOR_RGB2BGR)
+#
+# cv2.imwrite(savapath, img_save)
+i11.save(savapath)

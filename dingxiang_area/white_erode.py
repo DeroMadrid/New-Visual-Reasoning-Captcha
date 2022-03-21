@@ -3,7 +3,7 @@ from PIL import Image
 import cv2
 import math
 
-openpath = "C:/Users/Dero/Desktop/dingxiang_area/dilation/5.png"
+openpath = "C:/Users/Dero/Desktop/dingxiang_area/dilation/1.png"
 # image1 = cv2.imread(openpath)
 savapath = "C:/Users/Dero/Desktop/dingxiang_area/dilation/1_full.png"
 image1 = Image.open(openpath)
@@ -23,6 +23,12 @@ for i in range(0, 150):
                     if 150 > (i+m) >= 0 and 300 > (j+n) >= 0:
                         img_array2[i+m][j+n] = 255
 
+for i in range(0, 150):
+    for j in range(0, 300):
+        if img_array2[i][j] == 255:
+            img_array2[i][j] = 0
+        else:
+            img_array2[i][j] = 255
 Image.fromarray(np.uint8(img_array2))
 img_save = cv2.cvtColor(np.asarray(img_array2), cv2.COLOR_RGB2BGR)
 

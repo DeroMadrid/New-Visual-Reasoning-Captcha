@@ -1,11 +1,15 @@
 ### New-Visual-Reasoning-Captcha
 contact me : 478022847@qq.com & lwangxd@stu.xidian.edu.cn 
 #### main context
-1. baidu rotation captcha
+1. baidu rotation captcha：
+
+
 it's about moving the button to make the real world image positive.
 code in "selenium_pa"
+
 2. dingxiang area captcha
 it's about finding the max area.
+
 3. dingxiang rotarion captcha
 4. jike Geetest xiaoxiaole captcha
 

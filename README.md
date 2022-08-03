@@ -1,5 +1,5 @@
 ### New-Visual-Reasoning-Captcha
-contact me : 478022847@qq.com & lwangxd@stu.xidian.edu.cn 
+
 #### main context
 1. baidu rotation captcha：
 
